@@ -79,11 +79,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
+## 관련 프로젝트 경로
+
+| 경로 | 설명 |
+|------|------|
+| `C:\eh\master\W-EdgeManager` | EdgeSquare 메인 솔루션 (Gradle, Spring Boot) |
+| `C:\eh\master\W-EdgeManager\webapp-manager` | 핵심 모듈 (Controller/Service/Repository) |
+
+## EdgeSquare 프로젝트 개요
+
+- **프로젝트명:** EdgeSquare (`settings.gradle` → `rootProject.name = 'EdgeSquare'`)
+- **모듈 구조:** 단일 활성 모듈 `webapp-manager` (나머지 주석 처리)
+- **소스 경로:** `webapp-manager/src/main/java/` (Java), `webapp-manager/src/main/resources/` (설정/UI), `webapp-manager/src/main/webapp/` (웹)
+
+### EdgeSquare 빌드 명령
+
+```bash
+cd C:\eh\master\W-EdgeManager
+
+# 개발 실행 (embedded Tomcat)
+gradlew bootRun
+
+# 릴리즈 빌드
+gradlew clean build -Pmode=release -S
+
+# 단위 테스트
+gradlew test
+```
+
 ## 기술 스택
 
 - **Backend:** Java 17+, Spring Boot 3.x, Spring Security, Spring Data JPA
 - **Frontend:** HTML/CSS/JS, Thymeleaf/React/Vue (프로젝트에 따라)
-- **Build:** Gradle (wrapper 사용: `./gradlew`)
+- **Build:** Gradle (wrapper 사용: `gradlew`)
 - **DB:** PostgreSQL (주), MySQL, Redis (캐시)
 - **Infra:** Docker, GitHub Actions, Nginx
 - **Test:** JUnit 5, Mockito, RestAssured

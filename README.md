@@ -31,6 +31,12 @@
 | QA 테스터 | qa-tester | 기능/예외/성능 테스트 |
 | 리서처 | researcher | 공식문서 기반 기술 조사 |
 
+## 연동 프로젝트
+
+| 프로젝트 | 경로 | 설명 |
+|----------|------|------|
+| **EdgeSquare** | `C:\eh\master\W-EdgeManager` | 메인 솔루션 (Spring Boot + Gradle) |
+
 ## 기술 스택
 
 - **Backend:** Java 17+ / Spring Boot 3.x / Spring Security / JPA
@@ -38,6 +44,7 @@
 - **DB:** PostgreSQL / MySQL / Redis
 - **Infra:** Docker / GitHub Actions / Nginx
 - **Test:** JUnit 5 / Mockito / RestAssured
+- **IDE:** IntelliJ IDEA
 
 ## 리포지토리 구조
 
