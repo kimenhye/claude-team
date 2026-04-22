@@ -14,16 +14,10 @@ COMMIT_FILE="${TEAM_DIR}/daily/.edge-commits-${TODAY}.md"
 cd "$EDGE_DIR"
 git fetch --all --quiet 2>/dev/null || true
 
-# 오늘 커밋 수집 (kimeh 작성자 기준)
+# 오늘 커밋 수집 (kimeh 작성자만)
 COMMITS=$(git log --since="$TODAY 00:00" --until="$TODAY 23:59" \
   --all --author="kimeh" \
   --pretty=format:"%ad|%h|%s" --date=format:"%H:%M" 2>/dev/null || true)
-
-if [ -z "$COMMITS" ]; then
-  # 전체 작성자 커밋도 수집
-  COMMITS=$(git log --since="$TODAY 00:00" --until="$TODAY 23:59" \
-    --all --pretty=format:"%ad|%h|%an|%s" --date=format:"%H:%M" 2>/dev/null || true)
-fi
 
 # 커밋 요약 파일 생성
 mkdir -p "${TEAM_DIR}/daily"
